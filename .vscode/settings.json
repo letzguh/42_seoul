@@ -1,5 +1,4 @@
 {
-	"git.ignoreLimitWarning": true,
-	"editor.insertSpaces": false,
-	"editor.renderWhitespace": "all"
+    "git.ignoreLimitWarning": true
+    "terminal.integrated.fontFamily": "D2Coding",
 }
