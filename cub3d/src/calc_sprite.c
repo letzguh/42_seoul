@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 16:43:32 by sohelee           #+#    #+#             */
-/*   Updated: 2021/03/16 12:13:03 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/17 18:47:21 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ void	calc_sprite_height_width(t_game *g)
 					+ g->config.screenheight / 2 + g->config.eyelevel;
 	if (g->ray_sprite.draw_end_y >= g->config.screenheight)
 		g->ray_sprite.draw_end_y = g->config.screenheight - 1;
-	g->ray_sprite.width = abs((int)(g->config.screenheight / 2 \
-					+ g->ray_sprite.trans_y));
+	g->ray_sprite.width = abs((int)(g->config.screenheight / \
+					g->ray_sprite.trans_y));
 	g->ray_sprite.draw_start_x = -g->ray_sprite.width / 2 \
 					+ g->ray_sprite.screen_x;
 	if (g->ray_sprite.draw_start_x < 0)
