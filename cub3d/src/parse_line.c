@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:02:11 by sohelee           #+#    #+#             */
-/*   Updated: 2021/03/16 18:01:51 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/18 18:55:09 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ static int	get_screensize(t_config *c, char *line)
 	c->screenheight = ft_atoi(screen[2]);
 	free_double(screen);
 	screen = 0;
-/*
-**	최대 해상도 관련 부문 채워넣어라
-*/
+	if (c->screenwidth > 2560)
+		c->screenwidth = 2560;
+	if (c->screenheight > 1440)
+		c->screenheight = 1440;
 	if (!c->screenheight || !c->screenwidth)
 		return (0);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:49:03 by sohelee           #+#    #+#             */
-/*   Updated: 2021/03/18 11:56:49 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/18 18:35:29 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int		exit_error_line(char *line, int code, char const *str)
 int		exit_game(t_game *game)
 {
 	free_machine(game);
+	stop_music();
 	exit(0);
 	return (0);
 }

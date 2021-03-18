@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:53:58 by sohelee           #+#    #+#             */
-/*   Updated: 2021/03/18 14:31:46 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/18 18:11:58 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,6 +194,7 @@ typedef struct		s_config
 	double			fov;
 	int				t_num;
 	int				istype[C_MAP + 1];
+	int				padding;
 	int				sprite_num;
 }					t_config;
 
@@ -202,6 +203,7 @@ typedef struct		s_sprite_y
 	double			x;
 	double			y;
 	double			distance;
+	int				c_type;
 }					t_sprite_y;
 
 typedef struct		s_game

@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:13:29 by sohelee           #+#    #+#             */
-/*   Updated: 2021/03/16 14:48:01 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/18 18:11:14 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,6 +195,7 @@ typedef struct		s_config
 	int				t_num;
 	int				istype[C_MAP + 1];
 	int				sprite_num;
+	int				padding;
 }					t_config;
 
 typedef struct		s_sprite_y

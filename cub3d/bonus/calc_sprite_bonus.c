@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 16:43:32 by sohelee           #+#    #+#             */
-/*   Updated: 2021/03/18 11:56:12 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/18 16:19:27 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	calc_sprite_height_width(t_game *g)
 		g->ray_sprite.draw_end_x = g->config.screenwidth - 1;
 }
 
-void	sprite_on_screen(t_game *g, int x, int height, int width)
+void	sprite_on_screen(t_game *g, int x, int height, t_tex tmp)
 {
 	int	draw;
 	int	color;
@@ -100,7 +100,7 @@ void	sprite_on_screen(t_game *g, int x, int height, int width)
 				(g->config.screenheight) * 128 + g->ray_sprite.height * 128;
 			g->ray_sprite.tex_y = ((draw * height) / \
 				g->ray_sprite.height) / 256;
-			color = g->config.tex[C_S].texture[width * \
+			color = tmp.texture[(int)tmp.width * \
 				g->ray_sprite.tex_y + g->ray_sprite.tex_x];
 			if ((color & 0X00FFFFFF) != 0)
 				g->buf[y][x] = color;
@@ -111,20 +111,23 @@ void	sprite_on_screen(t_game *g, int x, int height, int width)
 
 void	calc_sprite(t_game *g)
 {
-	int	i;
-	int	stripe;
+	int		i;
+	int		stripe;
+	int		type;
+	t_tex	tmp;
 
 	sort_sprite(g);
 	i = 0;
 	while (i < g->config.sprite_num)
 	{
+		type = g->sprite[i].c_type;
+		tmp = g->config.tex[type];
 		translate_sprite_pos(g, i);
 		calc_sprite_height_width(g);
 		stripe = g->ray_sprite.draw_start_x;
 		while (stripe < g->ray_sprite.draw_end_x)
 		{
-			sprite_on_screen(g, stripe, g->config.tex[C_S].height, \
-						g->config.tex[C_S].width);
+			sprite_on_screen(g, stripe, tmp.height, tmp);
 			stripe++;
 		}
 		i++;
