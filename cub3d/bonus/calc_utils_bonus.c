@@ -6,13 +6,20 @@
 /*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 16:56:49 by sohelee           #+#    #+#             */
-/*   Updated: 2021/03/18 11:56:17 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/18 17:02:29 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-void	set_sprite(t_game *g)
+static int	set_ctype_sp(t_game *g, int y, int x)
+{
+	if (g->config.map[y][x] == '3')
+		return (C_EXTRA);
+	return (C_S);
+}
+
+void		set_sprite(t_game *g)
 {
 	int	x;
 	int	y;
@@ -28,10 +35,11 @@ void	set_sprite(t_game *g)
 		x = 0;
 		while (x < g->config.colums)
 		{
-			if (g->config.map[y][x] == '2')
+			if (g->config.map[y][x] == '2' || g->config.map[y][x] == '3')
 			{
 				g->sprite[i].x = 0.5f + y;
 				g->sprite[i].y = 0.5f + x;
+				g->sprite[i].c_type = set_ctype_sp(g, y, x);
 				i++;
 			}
 			x++;
@@ -40,7 +48,7 @@ void	set_sprite(t_game *g)
 	}
 }
 
-void	set_ray_item(t_game *g, int x)
+void		set_ray_item(t_game *g, int x)
 {
 	g->ray.camera_x = 2 * x / (double)g->config.screenwidth - 1;
 	g->ray.dir_x = g->player.dir_x + g->player.plane_x * g->ray.camera_x;

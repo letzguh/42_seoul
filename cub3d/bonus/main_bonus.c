@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 21:12:40 by sohelee           #+#    #+#             */
-/*   Updated: 2021/03/18 14:43:24 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/18 18:35:05 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int		main_loop(t_game *game)
 	calc_sprite(game);
 	draw(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
+	put_info(game);
 	return (0);
 }
 

@@ -1,0 +1,42 @@
+1,3c1,11
+< #include <unistd.h>
+< #include <stdlib.h>
+< #include <stdio.h>
+---
+> /* ************************************************************************** */
+> /*                                                                            */
+> /*                                                        :::      ::::::::   */
+> /*   get_next_line.c                                    :+:      :+:    :+:   */
+> /*                                                    +:+ +:+         +:+     */
+> /*   By: sohelee <marvin@42.fr>                     +#+  +:+       +#+        */
+> /*                                                +#+#+#+#+#+   +#+           */
+> /*   Created: 2021/03/23 11:12:47 by sohelee           #+#    #+#             */
+> /*   Updated: 2021/03/23 11:21:01 by sohelee          ###   ########.fr       */
+> /*                                                                            */
+> /* ************************************************************************** */
+5c13,15
+< int	ft_strlen(char *s)
+---
+> #include "get_next_line.h"
+> 
+> int		ft_strlen(char *s)
+18d27
+< 
+32c41
+< 	int size;
+---
+> 	int	size;
+35c44
+< 	char *tmp;
+---
+> 	char *temp;
+44c53
+< 			tmp = ft_strjoin(store, buf);
+---
+> 			temp = ft_strjoin(store, buf);
+46c55
+< 			store = tmp;
+---
+> 			store = temp;
+51a61
+> 
