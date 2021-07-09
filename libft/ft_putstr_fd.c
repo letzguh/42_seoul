@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sohee <sohee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 10:53:17 by sohelee           #+#    #+#             */
-/*   Updated: 2020/10/14 11:03:53 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/22 17:40:21 by sohee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s || fd < 0)
 		return ;

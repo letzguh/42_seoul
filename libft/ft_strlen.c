@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sohee <sohee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 09:43:47 by sohelee           #+#    #+#             */
-/*   Updated: 2020/10/06 11:41:58 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/22 17:41:58 by sohee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	while (*(s + len) != '\0')

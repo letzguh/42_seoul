@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sohee <sohee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 11:20:11 by sohelee           #+#    #+#             */
-/*   Updated: 2020/10/18 21:47:59 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/22 18:08:11 by sohee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -49,8 +49,8 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strdup(const char *s);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strnstr(const char *big,
-	const char *little, size_t len);
+char				*ft_strnstr(const char *big, \
+					const char *little, size_t len);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -65,7 +65,8 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-	void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), \
+					void (*del)(void *));
+void				*var_malloc(size_t size);
 
 #endif

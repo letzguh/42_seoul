@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sohee <sohee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 17:02:17 by sohelee           #+#    #+#             */
-/*   Updated: 2020/10/19 18:20:56 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/22 17:39:31 by sohee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*new_dst;
 	char		*new_src;

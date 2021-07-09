@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sohee <sohee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 15:45:49 by sohelee           #+#    #+#             */
-/*   Updated: 2020/10/22 20:10:47 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/22 18:12:35 by sohee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	int		len;
 	int		i;

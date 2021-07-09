@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sohee <sohee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 16:34:16 by sohelee           #+#    #+#             */
-/*   Updated: 2020/10/08 17:43:42 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/22 17:41:08 by sohee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	char	find;
 	int		i;

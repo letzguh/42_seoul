@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sohelee <sohelee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sohee <sohee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 14:23:24 by sohelee           #+#    #+#             */
-/*   Updated: 2020/10/23 16:14:38 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/03/22 18:10:22 by sohee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t		get_len(int n)
+static size_t	get_len(int n)
 {
-	size_t len;
+	size_t		len;
 
 	len = 0;
 	if (n == 0)
@@ -29,7 +29,7 @@ static size_t		get_len(int n)
 	return (len);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	size_t	n_len;
@@ -38,7 +38,8 @@ char				*ft_itoa(int n)
 	if (n == -2147483648)
 		return (str = ft_strdup("-2147483648"));
 	n_len = get_len(n);
-	if (!(str = (char *)malloc(sizeof(char) * (n_len + 1))))
+	str = (char *)malloc(sizeof(char) * (n_len + 1));
+	if (!(str))
 		return (NULL);
 	i = 0;
 	if (n < 0)
