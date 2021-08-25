@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:08:36 by sohelee           #+#    #+#             */
-/*   Updated: 2021/08/24 17:08:49 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/08/25 15:21:51 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	print_and_free(t_static *static_var)
 	}
 	else
 	{
-		write(2, "Error\nSignal lost\n", 18);
+		write(1, "Error\nSignal lost\n", 18);
 		exit(0);
 	}
 	free(static_var->str);

@@ -6,7 +6,7 @@
 /*   By: sohelee <sohelee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:08:31 by sohelee           #+#    #+#             */
-/*   Updated: 2021/08/24 17:08:50 by sohelee          ###   ########.fr       */
+/*   Updated: 2021/08/25 15:21:55 by sohelee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	kill_to_server(int server_pid, int signal)
 {
 	if (kill(server_pid, signal) == -1)
 	{
-		write(2, "Transmission error\n", 19);
+		write(1, "Transmission error\n", 19);
 		exit(0);
 	}
 }
