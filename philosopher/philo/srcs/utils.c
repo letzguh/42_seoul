@@ -6,6 +6,8 @@ int	ret_timestamp(t_philo *philo)
 	int				timestamp;
 
 	gettimeofday(&get_time, NULL);
+	if (philo->variable->first_meal_time.tv_sec == 0)
+		return (0);
 	timestamp = get_time.tv_usec - philo->variable->first_meal_time.tv_usec + \
 		(get_time.tv_sec - philo->variable->first_meal_time.tv_sec) * 1000000;
 	return (timestamp);
