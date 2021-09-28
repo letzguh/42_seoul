@@ -21,10 +21,7 @@ static int	philo_eat(t_philo *philo)
 	pthread_mutex_unlock(&philo->mutex->mutex_forks[philo->fork_num[LEFT]]);
 	philo->have_meal++;
 	if (philo->have_meal == philo->variable->must_eat)
-	{
 		philo->variable->finished_meal++;
-		return (FINISHED_MEAL);
-	}
 	return (RET_OK);
 }
 
