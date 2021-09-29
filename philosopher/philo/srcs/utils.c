@@ -29,7 +29,7 @@ int	print_status(t_philo *philo, char *str, int status, int philo_num)
 		ft_usleep(philo, philo->variable->time_to_eat, timestamp);
 	}
 	if (status == STATUS_SLEEP)
-		ft_usleep(philo,philo->variable->time_to_sleep, timestamp);
+		ft_usleep(philo, philo->variable->time_to_sleep, timestamp);
 	return (RET_OK);
 }
 

@@ -27,7 +27,7 @@ static int	philo_eat(t_philo *philo)
 
 void	*thread_philo(void *start_routine)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = (t_philo *)start_routine;
 	if (philo->variable->first_meal_time.tv_sec == 0)
@@ -35,13 +35,13 @@ void	*thread_philo(void *start_routine)
 	while (philo->variable->philo_alive == TRUE)
 	{
 		if (philo_eat(philo) != RET_OK)
-			break;
+			break ;
 		if (print_status(philo, "is sleeping", STATUS_SLEEP, \
 			philo->philo_num + 1) != RET_OK)
-			break;
+			break ;
 		if (print_status(philo, "is thinking", STATUS_THINK, \
 			philo->philo_num + 1) != RET_OK)
-			break;
+			break ;
 	}
 	pthread_mutex_unlock(&philo->mutex->mutex_print);
 	pthread_mutex_unlock(&philo->mutex->mutex_forks[philo->fork_num[RIGHT]]);

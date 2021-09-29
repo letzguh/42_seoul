@@ -23,16 +23,21 @@ static int	sleep_until_even_eat(t_variable variable)
 	struct timeval	get_time;
 	struct timeval	timestamp;
 	int				time_taken;
+	int				check_death;
 
+	if (variable.time_to_die < variable.time_to_eat)
+		check_death = variable.time_to_die;
+	else
+		check_death = variable.time_to_eat;
 	gettimeofday(&get_time, NULL);
 	while (TRUE)
 	{
 		gettimeofday(&timestamp, NULL);
 		time_taken = timestamp.tv_usec - get_time.tv_usec + \
 			(timestamp.tv_sec - get_time.tv_sec) * 1000000;
-		if (time_taken > variable.time_to_eat * 900)
-			break;
-		usleep(variable.time_to_eat);
+		if (time_taken > check_death * 900)
+			break ;
+		usleep(check_death);
 	}
 	return (RET_OK);
 }
@@ -76,7 +81,11 @@ int	main(int ac, char **av)
 	i = -1;
 	if (check_error(ac, av) == RET_ERROR)
 		return (RET_ERROR);
-	init_variable(ac, av, &variable);
+	if (init_variable(ac, av, &variable) == RET_ERROR)
+	{
+		printf("Error\n");
+		return (RET_ERROR);
+	}
 	init_mutex(&mutex, &variable);
 	philo = init_philos(&variable, &mutex);
 	if (philo == NULL)

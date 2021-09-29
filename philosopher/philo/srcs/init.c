@@ -1,19 +1,32 @@
 #include "philo.h"
 
-void	init_variable(int ac, char **av, t_variable *variable)
+int	init_variable(int ac, char **av, t_variable *variable)
 {
 	if (ac == 5)
 		variable->must_eat = -1;
 	else
+	{
 		variable->must_eat = ft_atoi(av[5]);
+		if (variable->must_eat == -1)
+			return (RET_ERROR);
+	}
 	variable->num_of_philos = ft_atoi(av[1]);
+	if (variable->num_of_philos == -1)
+		return (RET_ERROR);
 	variable->time_to_die = ft_atoi(av[2]);
+	if (variable->time_to_die == -1)
+		return (RET_ERROR);
 	variable->time_to_eat = ft_atoi(av[3]);
+	if (variable->time_to_eat == -1)
+		return (RET_ERROR);
 	variable->time_to_sleep = ft_atoi(av[4]);
+	if (variable->time_to_sleep == -1)
+		return (RET_ERROR);
 	variable->finished_meal = 0;
 	variable->philo_alive = TRUE;
 	variable->first_meal_time.tv_sec = 0;
 	variable->first_meal_time.tv_usec = 0;
+	return (RET_OK);
 }
 
 int	init_mutex(t_mutex *mutex, t_variable *variable)

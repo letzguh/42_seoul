@@ -23,7 +23,6 @@
 # define STATUS_FORK 3
 # define STATUS_END 4
 
-
 typedef struct s_mutex
 {
 	pthread_mutex_t	mutex_print;
@@ -66,7 +65,7 @@ void	free_all(t_philo *philo, t_mutex *mutex, t_variable *variable);
 /*
 ** init.c
 */
-void	init_variable(int ac, char **av, t_variable *variable);
+int		init_variable(int ac, char **av, t_variable *variable);
 int		init_mutex(t_mutex *mutex, t_variable *variable);
 t_philo	*init_philos(t_variable *variable, t_mutex *mutex);
 
